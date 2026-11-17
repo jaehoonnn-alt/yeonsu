@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<title>교사 연수 안내</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span><span id="brandName">연수 안내</span></a>
+    <nav class="nav" aria-label="바로가기">
+      <a href="#notice">게시판</a>
+      <a href="#links">바로가기</a>
+      <a href="#ask">질문하기</a>
+    </nav>
+  </div>
+  <div class="strip timer" id="timerBar" hidden><div class="container strip-in"><span id="timerLabel">남은 시간</span><span class="t" id="timerVal">0:00</span></div></div>
+  <div class="strip poll" id="pollBanner" hidden><div class="container strip-in"><span>아직 답하지 않은 설문이 있어요.</span><button class="btn primary small" id="pollBtn" type="button">설문 참여하기</button></div></div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-grid single" id="heroGrid">
+    <div class="hero-main">
+      <p class="eyebrow" id="hEyebrowWrap"><span class="dot" aria-hidden="true"></span><span id="hEyebrow">교원 연수</span></p>
+      <h1 id="hTitle">교사 연수 안내</h1>
+      <p class="lead" id="hSub"></p>
+      <ul class="facts" id="hFacts"></ul>
+      <p class="intro" id="hIntro" hidden></p>
+    </div>
+    <aside class="now" id="nowCard" aria-live="polite" hidden>
+      <span class="lab"><span class="pulse" aria-hidden="true"></span>지금 진행 중</span>
+      <span class="ttl" id="nowTitle"></span>
+      <span class="when" id="nowWhen"></span>
+      <span class="tm" id="nowTimer" hidden><span id="nowTimerLabel">남은 시간</span><b id="nowTimerVal">0:00</b></span>
+      <span class="next" id="nowNext" hidden></span>
+    </aside>
+  </div>
+</section>
+
+<main class="container layout" id="layout">
+
+  <section class="panel" id="links">
+    <div class="panel-head"><span class="pico" data-ic="link"></span><h2>바로가기</h2><span class="hint">연수 내내 쓰는 링크와 주소</span></div>
+    <div class="tiles" id="pinList"><p class="empty">등록된 링크가 아직 없어요.</p></div>
+  </section>
+
+
+  <section class="panel" id="notice">
+    <div class="panel-head"><span class="pico" data-ic="bell"></span><h2>공지·자료</h2><span class="hint">새 글이 올라오면 자동으로 나타나요</span></div>
+    <div class="results" id="sharedResults"></div>
+    <div class="feed" id="postList"><p class="empty">불러오는 중이에요…</p></div>
+  </section>
+
+  <aside class="panel copypanel" id="copyPanel" hidden>
+    <div class="panel-head"><span class="pico" data-ic="copy"></span><h2>복사해서 쓰세요</h2></div>
+    <p class="hint">누르면 바로 복사돼요.</p>
+    <div class="copylist" id="copyList"></div>
+  </aside>
+
+  <section class="panel" id="ask">
+    <div class="panel-head"><span class="pico" data-ic="help"></span><h2>질문하기</h2><span class="hint">이름은 표시되지 않아요</span></div>
+    <div class="askbox">
+      <div class="field"><label for="qText" class="sr">질문</label><textarea id="qText" maxlength="300" placeholder="연수 중 궁금한 점을 적어 주세요"></textarea></div>
+      <div class="row"><button class="btn primary" id="qBtn" type="button">남기기</button></div>
+    </div>
+    <div class="qlist" id="qList"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container inner">
+    <span id="footText"></span>
+    <a href="/admin">관리자</a>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay" hidden><div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle"></div></div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<script src="/assets/common.js"></script>
+<script src="/assets/app.js"></script>
+</body>
+</html>
